@@ -8,7 +8,6 @@ import Layout from '../../components/layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
-import { CMS_NAME } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
 
 export default function Post({ post, morePosts, preview }) {
@@ -26,10 +25,18 @@ export default function Post({ post, morePosts, preview }) {
           <>
             <article className="mb-32">
               <Head>
-                <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
-                </title>
-                <meta property="og:image" content={post.ogImage.url} />
+              <meta name="twitter:card" content="summary_large_image" />
+              <meta name="twitter:site" content="@kikisad_" />
+              <meta name="twitter:creator" content="@kikisad_" />
+              <meta name="twitter:title" content="Blog – La vie d'un étudiant entrepreneur" />
+              <meta name="twitter:description" content={post.excerpt} />
+              <meta name="twitter:image" content={post.ogImage.url} />
+              <meta property="og:url" content="https://blog.tailwindcss.com" />
+              <meta property="og:type" content="article" />
+              <meta property="og:description" content={post.excerpt} />
+              <meta property="og:image" content={post.ogImage.url} />
+              <title>{post.title} | L'entreprenariat étudiant</title>
+              <meta name="description" content={post.excerpt} />
               </Head>
               <PostHeader
                 title={post.title}
@@ -51,6 +58,7 @@ export async function getStaticProps({ params }) {
     'title',
     'date',
     'slug',
+    'excerpt',
     'author',
     'content',
     'ogImage',
