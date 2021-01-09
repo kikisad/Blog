@@ -66,11 +66,11 @@ export default function Footer() {
         </ExternalLink>
       </div>
       <div className="space-x-3">
-      <Link href="/podcast">
+      <Link href="/">
           <a className="text-sm text-gray-500 hover:text-gray-600"> *Home</a>
         </Link>
-      <ExternalLink href="https://photos.leerob.io">*Podcast</ExternalLink>
-        <Link href="/podcast">
+      <ExternalLink href="https://anchor.fm/plustard">*Podcast</ExternalLink>
+        <Link href="/apropos">
           <a className="text-sm text-gray-500 hover:text-gray-600"> *A propos</a>
         </Link>
       </div>

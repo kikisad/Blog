@@ -12,10 +12,11 @@ export default function PostPreview({
 }) {
   return (
     <div>
+      <Link as={`/posts/${slug}`} href="/posts/[slug]"> 
       <div class=" p-8 mr-7 bg-white rounded-xl hover:bg-blue-50	">
-      <div class="flex flex-col-reverse	 sm:flex-row">
+        <div class="flex flex-col-reverse	 sm:flex-row">
         <div class="">
-            <h3 className="block pb-3 mt-1 text-base leading-tight font-medium text-black hover:underline">
+            <h3 className="block pb-3 pr-14 mt-1 text-lg leading-7	font-medium text-black hover:underline">
               <Link as={`/posts/${slug}`} href="/posts/[slug]">
                 <a className="hover:underline">{title}</a>
               </Link>
@@ -27,7 +28,7 @@ export default function PostPreview({
               </div>
               <div className="pl-5 ">
               <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                Ne marche aps {tag}
+                {tag}
               </span>
               </div>
               <div className="pl-5 place-self-center">
@@ -49,6 +50,8 @@ export default function PostPreview({
           </div>
       </div>
     </div>
+    </Link>
+
   </div>
     
   )

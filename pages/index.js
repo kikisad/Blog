@@ -5,8 +5,6 @@ import HeroBanner from '../components/herobanner'
 import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
 import Head from 'next/head'
-import Image from 'next/image'
-
 
 export default function Index({ allPosts }) {
   const morePosts = allPosts.slice(0)
@@ -17,7 +15,6 @@ export default function Index({ allPosts }) {
           <title>L'entreprenariat étudiant par killian </title>
         </Head>
         <HeroBanner />
-
         <Container>
           <Header>
             <MoreStories posts={morePosts} />

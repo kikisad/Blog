@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 export default function Header({ children }) {
   return (
     <div className="bg-white dark:bg-black">
-      <nav className=" sm:sticky top-0 p-5 flex justify-between items-center w-full bg-white dark:bg-black bg-opacity-90">
+      <nav className=" sm:sticky  sticky-nav p-5 flex justify-between items-center w-full bg-white dark:bg-black bg-opacity-90">
         <div>
           <NextLink href="/">
             <a className="p-1 text-xl	font-bold sm:p-4 text-gray-900 dark:text-gray-100">Logo</a>
@@ -13,7 +13,7 @@ export default function Header({ children }) {
               A propos 
             </a>
           </NextLink>
-          <NextLink href="/about">
+          <NextLink href="https://anchor.fm/plustard">
             <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">Podcast</a>
           </NextLink>
         </div>

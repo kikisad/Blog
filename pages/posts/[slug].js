@@ -3,6 +3,7 @@ import ErrorPage from 'next/error'
 import Container from '../../components/container'
 import PostBody from '../../components/post-body'
 import Header from '../../components/header'
+import PostContainer from '../../components/container'
 import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
@@ -17,24 +18,24 @@ export default function Post({ post, morePosts, preview }) {
   }
   return (
     <Layout preview={preview}>
-      <Container>
-        <Header />
+      <PostContainer>
+        <Header>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="mb-32">
+            <article className="">
               <Head>
               <meta name="twitter:card" content="summary_large_image" />
               <meta name="twitter:site" content="@kikisad_" />
               <meta name="twitter:creator" content="@kikisad_" />
-              <meta name="twitter:title" content="Blog – La vie d'un étudiant entrepreneur" />
+              <meta name="twitter:title" content={post.title} />
               <meta name="twitter:description" content={post.excerpt} />
-              <meta name="twitter:image" content={post.ogImage.url} />
+              <meta name="twitter:image" content={post.coverImage} />
               <meta property="og:url" content="https://blog.tailwindcss.com" />
               <meta property="og:type" content="article" />
               <meta property="og:description" content={post.excerpt} />
-              <meta property="og:image" content={post.ogImage.url} />
+              <meta property="og:image" content={post.coverImage} />
               <title>{post.title} | L'entreprenariat étudiant</title>
               <meta name="description" content={post.excerpt} />
               </Head>
@@ -48,7 +49,8 @@ export default function Post({ post, morePosts, preview }) {
             </article>
           </>
         )}
-      </Container>
+        </Header>
+      </PostContainer>
     </Layout>
   )
 }
