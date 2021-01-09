@@ -11,7 +11,7 @@ export default function Footer() {
             Je raconte ma vie
           </h3>
           <div className="flex flex-col lg:flex justify-center items-center lg:pl-4 lg:w-1/2">
-            <div className=" sm:absolute bottom-2/4 left-2/4 h-80 W-96 ">
+            <div className=" sm:absolute tothetop bottom-2/4 left-2/4 h-80 W-96 ">
                 <Image
                   alt="Images-Header-Laboratoire-idees-etudiant-entrepreneur"
                   className=""
