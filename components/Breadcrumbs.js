@@ -37,25 +37,25 @@ export  const Breadcrumbs = () => {
       <div class="flex">
         <div class="flex-initial">
           <Link href="/">
-              <a className="pr-3 text-gray-900 dark:text-gray-100">
-                Acceuil 
+              <a className="pr-2 text-gray-900 dark:text-gray-100">
+                Acceuil
               </a>
           </Link>
         </div>
-        <div class="flex-initial ...">
+        <div>
+        <ul class="inline lowercase">
           {breadcrumbs.map((breadcrumb, i) => {
             return (
-            <div key={breadcrumb.href}>
-                <div class="lowercase">
-                  <Link href={breadcrumb.href}>
-                    <a>
-                      / {convertBreadcrumb(breadcrumb.breadcrumb)}
+                    <li class="inline pr-2">
+                    <Link href={breadcrumb.href}>
+                    <a key={breadcrumb.href}>
+                     / {convertBreadcrumb(breadcrumb.breadcrumb)}
                     </a>
-                  </Link>
-                </div>
-            </div>
+                    </Link>
+                    </li>
             );
           })}
+          </ul>
         </div>
       </div>
     </nav>

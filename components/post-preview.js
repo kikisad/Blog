@@ -1,6 +1,8 @@
 import DateFormatter from '../components/date-formatter'
 import CoverImage from './cover-image'
+
 import Link from 'next/link'
+
 
 export default function PostPreview({
   title,
@@ -11,9 +13,9 @@ export default function PostPreview({
   slug,
 }) {
   return (
-    <div>
+    <div class="	">
       <Link as={`/posts/${slug}`} href="/posts/[slug]"> 
-      <div class=" p-8 mr-7 bg-white rounded-xl hover:bg-blue-50	">
+      <div class=" p-8  bg-white rounded-xl hover:bg-blue-50	">
         <div class="flex flex-col-reverse	 sm:flex-row">
         <div class="">
             <h3 className="block pb-3 pr-14 mt-1 text-lg leading-7	font-medium text-black hover:underline">
@@ -22,7 +24,7 @@ export default function PostPreview({
               </Link>
             </h3>
             <p className="text-sm	pt-2 text-gray-500">{excerpt}</p>
-            <div class="flex flex-wrap">
+            <div class="flex flex-wrap pt-2">
               <div className="text-xs	pt-2 text-gray-700">
                 <DateFormatter dateString={date} />
               </div>
@@ -31,13 +33,24 @@ export default function PostPreview({
                 {tag}
               </span>
               </div>
-              <div className="pl-5 place-self-center">
+              <div className="pl-5 ">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12H21M21 12L14 5M21 12L14 19" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
               </div>
             </div>
 
         </div>
-        <div class=" mb-5 place-self-center">
+        <div class=" mb-5 place-self-center sm:hidden">
+          <div className="">
+                <CoverImage
+                  slug={slug}
+                  title={title}
+                  src={coverImage}
+                  height={200}
+                  width={400}
+                />
+              </div>
+          </div>
+          <div class=" mb-5 place-self-center hidden sm:block">
           <div className="">
                 <CoverImage
                   slug={slug}

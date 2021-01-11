@@ -6,7 +6,7 @@ export default function NowPlaying() {
   const { data } = useSWR('/api/now-playing', fetcher);
 
   return (
-    <div className="flex items-center w-full shadow rounded-lg w-72 p-2 mb-8">
+    <div className="flex items-center w-full md:w-3/5 lg:w-3/5 xl:w-full shadow rounded-lg mx-auto p-2 mb-8">
       <Image
         alt="Spotify"
         className="rounded-lg w-60 h-60"

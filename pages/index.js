@@ -6,12 +6,15 @@ import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
 import Head from 'next/head'
 
+
+
 export default function Index({ allPosts }) {
   const morePosts = allPosts.slice(0)
   return (
     <>
       <Layout>
         <Head>
+          <script type="text/javascript" src="/js/dragmouse.js"></script>
           <title>L'entreprenariat étudiant par killian </title>
         </Head>
         <HeroBanner />

@@ -31,7 +31,7 @@ export default function MoreStories({ posts }) {
                 <div class='sm:pt-5	'>
                 <NowPlaying/>
                 </div>
-              <div class="">
+              <div class="w-full md:w-3/5 lg:w-3/5 xl:w-full mx-auto">
                 <h3 id="course-overview"class="text-2xl pb-2 leading-6 font-medium text-gray-900">
                   Dashboard
                 </h3>
