@@ -15,15 +15,16 @@ export default function PostPreview({
   return (
     <div class="	">
       <Link as={`/posts/${slug}`} href="/posts/[slug]"> 
-      <div class=" p-8  bg-white rounded-xl hover:bg-blue-50	">
+      <div class=" py-5 sm:p-5 bg-white rounded-xl hover:bg-blue-50	">
         <div class="flex flex-col-reverse	 sm:flex-row">
-        <div class="">
+        <div class="w-11/12 mx-auto">
             <h3 className="block pb-3 pr-14 mt-1 text-lg leading-7	font-medium text-black hover:underline">
               <Link as={`/posts/${slug}`} href="/posts/[slug]">
                 <a className="hover:underline">{title}</a>
               </Link>
             </h3>
-            <p className="text-sm	pt-2 text-gray-500">{excerpt}</p>
+            
+            <p className="text-sm	pt-2 text-gray-500 pr-20">{excerpt}</p>
             <div class="flex flex-wrap pt-2">
               <div className="text-xs	pt-2 text-gray-700">
                 <DateFormatter dateString={date} />

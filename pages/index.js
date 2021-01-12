@@ -14,12 +14,11 @@ export default function Index({ allPosts }) {
     <>
       <Layout>
         <Head>
-          <script type="text/javascript" src="/js/dragmouse.js"></script>
           <title>L'entreprenariat étudiant par killian </title>
         </Head>
-        <HeroBanner />
         <Container>
           <Header>
+            <HeroBanner />
             <MoreStories posts={morePosts} />
           </Header>
         </Container>
