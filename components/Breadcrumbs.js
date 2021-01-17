@@ -33,11 +33,11 @@ export  const Breadcrumbs = () => {
   }
 
   return (
-    <nav aria-label="breadcrumbs">
+    <nav aria-label="breadcrumbs ">
       <div class="flex">
         <div class="flex-initial">
           <Link href="/">
-              <a className="pr-2 text-gray-900 dark:text-gray-100">
+              <a className="pr-2 text-gray-900  text-sm">
                 Acceuil
               </a>
           </Link>
@@ -46,7 +46,7 @@ export  const Breadcrumbs = () => {
         <ul class="inline lowercase">
           {breadcrumbs.map((breadcrumb, i) => {
             return (
-                    <li class="inline pr-2">
+                    <li class="inline pr-2 text-sm">
                     <Link href={breadcrumb.href}>
                     <a key={breadcrumb.href}>
                      / {convertBreadcrumb(breadcrumb.breadcrumb)}

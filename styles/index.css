@@ -14,11 +14,38 @@
 
 /* Your own custom utilities */
 
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
 .gradient{
     background: linear-gradient(270deg,#0AF5F4 25.28%,#09DB1F 59.7%,#F7F322 97.75%);
     width: 100%;
     height: 15px;
+
 }
+.gradienttkt{
+  background: -webkit-linear-gradient(180deg,#0AF5F4 25.28%,#09DB1F 59.7%,#F7F322 97.75%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradientbtn{
+  background: linear-gradient(90deg,#0AF5F4 25.28%,#09DB1F 59.7%,#F7F322 97.75%);
+  width: 100px;
+  height: 100px;
+}
+.glassbtn{
+  backdrop-filter: blur(2em);
+  -webkit-backdrop-filter: blur(2em);
+  width: 100px;
+  height: 100px;
+}
+.blankbtn{
+    width: 93px;
+    height: 93px;
+  }
+
 
 .sticky-nav {
     z-index: 10;
@@ -30,3 +57,59 @@
     z-index: 1;
 
   }
+
+
+
+  :root {
+    --text: #2b3044;
+    --line: #dbdde9;
+    --line-active: black;
+  }
+  
+  .animation {
+    font-size: 18px;
+    margin: 0;
+    color: var(--text);
+  }
+ .animation a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    margin: 0 var(--spacing, 0px);
+    transition: margin 0.25s;
+  }
+ .animation a svg {
+    width: 100px;
+    height: 80px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 7px) translateZ(0);
+    fill: none;
+    stroke: var(--stroke, var(--line));
+    stroke-linecap: round;
+    stroke-width: 2px;
+    stroke-dasharray: var(--offset, 69px) 278px;
+    stroke-dashoffset: 361px;
+    transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
+  }
+  .animation a:hover {
+    --spacing: 4px;
+    --stroke: var(--line-active);
+    --stroke-delay: 0.1s;
+    --offset: 180px;
+  }
+  
+  html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  * {
+    box-sizing: inherit;
+  }
+  *:before, *:after {
+    box-sizing: inherit;
+  }
+  

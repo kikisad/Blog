@@ -2,6 +2,7 @@ import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import Header from '../components/header'
 import HeroBanner from '../components/herobanner'
+import Headertitre from '../components/headertitre'
 import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
 import Head from 'next/head'
@@ -16,9 +17,10 @@ export default function Index({ allPosts }) {
         <Head>
           <title>L'entreprenariat étudiant par killian </title>
         </Head>
+        <HeroBanner />
         <Container>
           <Header>
-            <HeroBanner />
+            <Headertitre/>
             <MoreStories posts={morePosts} />
           </Header>
         </Container>
