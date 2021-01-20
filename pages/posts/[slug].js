@@ -32,7 +32,7 @@ export default function Post({ post, morePosts, preview }) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="">
+            <article className="mx-auto w-full sm:w-9/12 ">
               <Head>
               <meta name="twitter:card" content="summary_large_image" />
               <meta name="twitter:site" content="@kikisad_" />
@@ -58,8 +58,7 @@ export default function Post({ post, morePosts, preview }) {
         )}
         </Header>
         <Divider />
-        <Retour />
-        <Divider />
+
       </PostContainer>
     </Layout>
   )

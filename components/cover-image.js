@@ -13,6 +13,7 @@ export default function CoverImage({ title, src, slug, height, width }) {
       layout="fixed"
       width={width}
       height={height}
+      
     />
   )
   return (

@@ -1,11 +1,13 @@
 import PostPreview from '../components/post-preview'
 import NowPlaying from '../components/NowPlaying'
+import Image from 'next/image';
+
 
 export default function MoreStories({ posts }) {
   return (
     <section>
-      <div class="flex flex-wrap pb-5 ">
-        <div class="pb-5 xl:w-8/12">
+      <div class="sm:flex sm:flex-wrap pb-5 ">
+        <div class="pb-5 lg:w-8/12">
           <div class="w-full cursor-pointer">
               {posts.map((post) => (
                 <PostPreview
@@ -20,9 +22,9 @@ export default function MoreStories({ posts }) {
               ))}
             </div>
           </div>
-        <div class="w-2/4	flex-1 lg:ml-5 rounded-xl">
+        <div class="sm:w-2/4	flex-1 lg:ml-5 rounded-xl">
         <div class="">
-              <div class=" w-full p-5  shadow	 rounded-t-lg ">
+              <div class=" w-full p-5 shadow rounded-t-lg ">
                   <h3 class="text-2xl  leading-6 font-medium text-gray-900">
                     Mes musiques
                   </h3>
@@ -36,28 +38,28 @@ export default function MoreStories({ posts }) {
                   </h3>
               </div> 
               <div class="w-full p-5  border border-gray-200 border-t-0">
-                <div class="">
-                   <h4 class="text-lg leading-6 font-medium text-gray-500">
-                     Ventes en ligne
-                  </h4>
-                  <h4 class="text-2xl pt-2  leading-6 font-medium text-black">
-                     0€
-                  </h4>
+                <div class="flex flex-wrap justify-between	">
+                  <div class="">
+                    <h4 class="text-lg leading-6 font-medium text-gray-500">
+                      Ventes en ligne
+                    </h4>
+                    <h4 class="text-2xl pt-2  leading-6 font-medium text-black">
+                      0€
+                    </h4>
+                  </div>
+                  <div class="place-content-end	">
+                  <Image
+                    alt="Icon-article-design-blog-3D-2"
+                    className="rounded-lg mt-10 "
+                    height={60}
+                    width={60}
+                    priority="true"
+                    quality="100"
+                    src={'/static/images/Icon-Argent-Blog-Vente-En-Ligne.png'}
+                    />
+                  </div>
                 </div>
               </div> 
-
-              <div class="w-full p-5  border border-gray-200 border-t-0">
-                <div class="">
-                   <h4 class="text-lg leading-6 font-medium text-gray-500">
-                     Nombre de témoins de mes objectif 
-                  </h4>
-                  <h4 class="text-2xl pt-2  leading-6 font-medium text-black">
-                     -> Nb 
-                  </h4>
-                </div>
-              </div> 
-
-
             </div>  
         </div>
       </div>  

@@ -12,18 +12,18 @@ export default function PostPreview({
   slug,
 }) {
   return (
-    <div class="	mb-5">
+    <div class="mb-5">
       <Link as={`/posts/${slug}`} href="/posts/[slug]"> 
-      <div class=" py-5 sm:p-5 bg-white shadow rounded-xl ">
-        <div class="flex flex-col-reverse	 sm:flex-row">
+      <div class=" sm:p-5 bg-white shadow rounded-xl hovercard">
+        <div class="flex flex-col-reverse	 sm:flex-row ">
         <div class="w-11/12 mx-auto">
-            <h3 className="block pb-3 pr-14 mt-1 text-lg leading-7	pr-20 font-medium text-black hover:underline">
+            <h3 className="block pb-3 sm:pr-14 mt-1 text-lg leading-7	font-medium text-black hover:underline">
               <Link as={`/posts/${slug}`} href="/posts/[slug]">
                 <a className="hover:underline">{title}</a>
               </Link>
             </h3>
-            <p className="text-sm	pt-2 text-gray-500 pr-20">{excerpt}</p>
-            <div class="flex flex-wrap pt-4">
+            <p className="text-sm	pt-2 text-gray-500 sm:pr-20">{excerpt}</p>
+            <div class="flex flex-wrap pt-4  mb-5">
                 <div className="text-xs	pt-2 text-gray-700">
                   <DateFormatter dateString={date} />
                 </div>
@@ -32,8 +32,8 @@ export default function PostPreview({
                     {tag}
                   </span>
                 </div>
-                <div className="pl-5 pt-1 ">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12H21M21 12L14 5M21 12L14 19" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                <div className="pl-5 pt-1 arrowanimate">
+                  <svg width="18" height="18" alt="Fleche-redirection" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12H21M21 12L14 5M21 12L14 19" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                 </div>
             </div>
 
@@ -44,19 +44,19 @@ export default function PostPreview({
                   slug={slug}
                   title={title}
                   src={coverImage}
-                  height={200}
-                  width={400}
+                  height={150}
+                  width={256}
                 />
               </div>
           </div>
-          <div class=" mb-5 place-self-center hidden sm:block">
+          <div class=" sm:place-self-center hidden sm:block">
           <div className="">
                 <CoverImage
                   slug={slug}
                   title={title}
                   src={coverImage}
-                  height={150}
-                  width={150}
+                  height={190}
+                  width={300}
                 />
               </div>
           </div>

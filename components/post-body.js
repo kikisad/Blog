@@ -4,9 +4,10 @@ export default function PostBody({ content }) {
   return (
     <div>
       <div
-        className={markdownStyles['markdown'],"prose prose-lg text-left font-normal text-lg leading-7	w-10/12 mx-auto"}
+        className={markdownStyles['markdown'],"prose max-w-none text-left font-normal text-lg leading-7 text-justify	lg:text-text-left	"}
         dangerouslySetInnerHTML={{ __html: content }}
       />
       </div>
   )
 }
+

@@ -63,7 +63,7 @@ html {
   :root {
     --text: #2b3044;
     --line: #dbdde9;
-    --line-active: black;
+    --line-active: #357BF0;
   }
   
   .animation {
@@ -95,6 +95,7 @@ html {
     transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
   }
   .animation a:hover {
+    transform: rotate(45deg);
     --spacing: 4px;
     --stroke: var(--line-active);
     --stroke-delay: 0.1s;
@@ -113,3 +114,21 @@ html {
     box-sizing: inherit;
   }
   
+  .hovercard {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    transition: box-shadow 200ms;
+    
+  }
+ 
+  .hovercard:hover {
+    box-shadow:  0 4px 6px -1px rgba(0, 0, 0, 0.1)
+  }
+
+  .hoverimages{
+    transition: transform 1s;
+    
+  }
+  .hoverimages:hover {
+    transform: rotate(180deg);
+  }
+

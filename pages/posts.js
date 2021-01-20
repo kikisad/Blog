@@ -4,11 +4,14 @@ import PostPreview from '../components/post-preview'
 import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
 import Link from 'next/link'
+import Image from 'next/image';
+
 
 export default function Blog({ allPosts }) {
   return (
     <>
       <Layout>
+
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
             <div class="flex mt-10">
               <div class="flex-initial">
@@ -24,9 +27,21 @@ export default function Blog({ allPosts }) {
               </Link>
               </div>
             </div>
-            <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
-              Tous les articles disponible. 
-            </h1>
+            <div className="mt-10 ">
+          <Image
+            alt="Spotify"
+            className="rounded-lg mt-10 "
+            height={60}
+            width={60}
+            src={'/static/images/Icon-article-design-blog-3D-2.png'}
+          />
+        <h2 className="text-6xl mt-5 md:text-7xl font-bold tracking-tighter leading-tight">
+            L'ensemble des articles 
+          </h2>
+          <h3 className="pt-2 pb-10 text-gray-400">
+            Découvret tous mes articles, sur l'entreprenariat étudiant    
+          </h3>
+        </div>
             <div>
                       
             </div>
