@@ -37,7 +37,7 @@ export default function MoreStories({ posts }) {
     <section>
       <div class="sm:flex sm:flex-wrap pb-5 ">
         <div class="pb-5 lg:w-8/12">
-          <div class="w-full cursor-pointer">
+          <div class="w-full cursor-pointer ">
               {posts.map((post) => (
                 <motion.div 
                 whileHover={{ scale: 1.01 }}

@@ -13,12 +13,12 @@ export default function PostPreview({
 }) {
   return (
     <div class="mb-5">
-      <Link as={`/posts/${slug}`} href="/posts/[slug]"> 
+      <Link as={`/posts/${slug}`} href="/posts/[slug] scroll={false}"> 
       <div class=" sm:p-5 bg-white shadow rounded-xl hovercard">
         <div class="flex flex-col-reverse	 sm:flex-row ">
         <div class="w-11/12 mx-auto">
             <h3 className="block pb-3 sm:pr-14 mt-1 text-lg leading-7	font-medium text-black hover:underline">
-              <Link as={`/posts/${slug}`} href="/posts/[slug]">
+              <Link as={`/posts/${slug}`} href="/posts/[slug] scroll={false}">
                 <a className="hover:underline">{title}</a>
               </Link>
             </h3>

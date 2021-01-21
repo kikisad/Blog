@@ -23,10 +23,10 @@ export default function Header({ children }) {
     <motion.div variants={fadeInUp}  className="bg-white ">
       <nav className=" sm:sticky sticky-nav mt-3 pl-5 pr-9 lg:pl-4 flex justify-between items-center bg-white bg-opacity-90">
         <div class="flex flex-nowrap">
-          <NextLink href="/">
+          <NextLink href="/" scroll={false}>
             <a className="p-1 text-sm sm:text-xl font-bold sm:p-4 text-gray-900 ">Blog killian.</a>
           </NextLink>
-          <NextLink href="/apropos" >
+          <NextLink href="/apropos" scroll={false} >
             <p className="animation">
                 <a href="#" className="p-1 pl-5 pr-3 text-sm sm:text-base	 pb-5 sm:p-4 text-gray-900 ">
                     À propos
@@ -36,7 +36,7 @@ export default function Header({ children }) {
                 </a>
             </p>
           </NextLink>
-          <NextLink href="https://anchor.fm/plustard">
+          <NextLink href="https://anchor.fm/plustard" scroll={false}>
           <p className="animation">
                 <a href="#" className="hidden p-1 pl-3 pr-3 text-sm sm:text-base	pb-5 sm:p-4  text-gray-900 ">
                     Podcast
