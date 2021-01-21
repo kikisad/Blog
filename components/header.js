@@ -1,8 +1,26 @@
 import NextLink from 'next/link';
+import { motion } from "framer-motion";
+let easing = [0.6, -0.05, 0.01, 0.99];
+const fadeInUp = {
+  initial: {
+    y: 60,
+    opacity: 0,
+    transition: { duration: 0.6, ease:easing,delay: 0.5 }
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: easing,
+      delay: 0.5
+    }
+  }
+};
 
 export default function Header({ children }) {
   return (
-    <div className="bg-white ">
+    <motion.div variants={fadeInUp}  className="bg-white ">
       <nav className=" sm:sticky sticky-nav mt-3 pl-5 pr-9 lg:pl-4 flex justify-between items-center bg-white bg-opacity-90">
         <div class="flex flex-nowrap">
           <NextLink href="/">
@@ -34,7 +52,7 @@ export default function Header({ children }) {
       <main className="flex flex-col justify-center bg-white dark:bg-black px-8">
         {children}
       </main>
-    </div>
+    </motion.div>
   );
 }
 

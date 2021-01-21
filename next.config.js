@@ -5,4 +5,7 @@ module.exports = {
       'pbs.twimg.com' // Twitter Profile Picture
     ]
   },
+  
 };
+
+

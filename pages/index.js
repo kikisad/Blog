@@ -6,25 +6,31 @@ import Headertitre from '../components/headertitre'
 import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
 import Head from 'next/head'
-
+import { motion } from "framer-motion";
 
 
 export default function Index({ allPosts }) {
   const morePosts = allPosts.slice(0)
   return (
     <>
+      <motion.div 
+      initial='initial' 
+      animate='animate' 
+      exit={{ opacity: 0 }}
+      >
       <Layout>
-        <Head>
-          <title>L'entreprenariat étudiant par killian </title>
-        </Head>
-        <HeroBanner />
-        <Container>
-          <Header>
-            <Headertitre/>
-            <MoreStories posts={morePosts} />
-          </Header>
-        </Container>
+          <Head>
+            <title>L'entreprenariat étudiant par killian </title>
+          </Head>
+          <HeroBanner />
+          <Container>
+            <Header>
+              <Headertitre/>
+              <MoreStories posts={morePosts} />
+            </Header>
+          </Container>
       </Layout>
+      </motion.div>
     </>
   )
 }

@@ -1,13 +1,40 @@
 import Image from 'next/image';
 import CoverImage from '../components/cover-image'
-import Retour from '../components/retour'
+import { motion } from "framer-motion";
+
+let easing = [0.6, -0.05, 0.01, 0.99];
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.05
+    }
+  }
+};
+
+const fadeInUp = {
+  initial: {
+    y: 60,
+    opacity: 0,
+    transition: { duration: 0.6, ease:easing }
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: easing
+    }
+  }
+};
 
 
 export default function Herobanner() {
   return (
-    <div>
+    <motion.div variants={stagger} >
+
       <div class="flex flex-wrap-reverse sm:flex-nowrap">
-        <div class="pl-5 lg:pl-8 w-full sm:w-1/2">
+        <motion.div variants={fadeInUp}  class="pl-5 lg:pl-8 w-full sm:w-1/2">
           <h3 class="text-base font-medium text-gray-600 sm:pt-32 md:pt-10 xl:pt-32	pt-5" >
             Hi, je suis killian 🖐 ! 
             </h3>
@@ -19,25 +46,45 @@ export default function Herobanner() {
             de mes projets
           </h1>
           <br/>
-          <div class="flex " >
+          <motion.div variants={fadeInUp} class="flex " >
             <div class="flex-initial ...">
               <h2 class="text-sm	font-normal	 text-gray-600">
               Un petit blog, pour tenir mes objectifs ! 
               <br/>
             </h2>
             </div>
-          </div>
+          </motion.div>
           <div class="flex flex-wrap pt-7 pb-20">
-            <div>
-            <button
-                aria-label="Lien vers mes articles"
-                type="button"
-                className="bg-gray-600 text-white font-black rounded p-5 mr-10 text-xs sm:text-xs	"
-              >        
-              Jette un œil à mes articles
-            </button>
-            </div>
-            <div class="mt-5 sm:mt-0 md:mt-5 lg:mt-5 md:hidden xl:block xl:mt-0 ">
+            <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.99 }}
+                  initial={{ x: -30, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ 
+                    duration: 0.3,
+                    ease: easing,
+                  }} 
+                  class="mt-5 sm:mt-0 md:mt-5 lg:mt-5 md:hidden xl:block xl:mt-0 "
+            >
+              <button
+                  aria-label="Lien vers mes articles"
+                  type="button"
+                  className="bg-gray-600 text-white font-black rounded p-5 mr-10 text-xs sm:text-xs	"
+                >        
+                Jette un œil à mes articles
+              </button>
+            </motion.div>
+            <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.99 }}
+                  initial={{ x: -30, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ 
+                    duration: 0.3,
+                    ease: easing,
+                  }} 
+                  class="mt-5 sm:mt-0 md:mt-5 lg:mt-5 md:hidden xl:block xl:mt-0 "
+            >
               
               <button
                   aria-label="Lien vers le podcast"
@@ -55,11 +102,16 @@ export default function Herobanner() {
                   </div>
               </button>
 
-            </div>
+            </motion.div>
         </div>
-        </div>
+        </motion.div>
 
-        <div class="sm:w-h-5/6 md:w-3/4 ">
+        <motion.div 
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.5, }}  
+                  class="sm:w-h-5/6 md:w-3/4 "
+        >
         <Image
           alt="Illustration-laboratoir-numérique-idées"
           className="rounded-lg"
@@ -69,10 +121,10 @@ export default function Herobanner() {
           quality="100"
           src={'/static/images/Illustration-Imagination-laboratoire-blog.png'}
           />
-        </div>
+        </motion.div>
 
     </div>
-    </div>
+    </motion.div>
   )
 }
 

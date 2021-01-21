@@ -1,15 +1,48 @@
 import PostPreview from '../components/post-preview'
 import NowPlaying from '../components/NowPlaying'
 import Image from 'next/image';
+import { motion } from "framer-motion";
 
+let easing = [0.6, -0.05, 0.01, 0.99];
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.05,
+      delay: 2
+    }
+  }
+};
+
+const fadeInUp = {
+  initial: {
+    y: 60,
+    opacity: 0,
+    transition: { duration: 0.6, ease:easing}
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: easing
+
+    }
+  }
+};
 
 export default function MoreStories({ posts }) {
   return (
+    <motion.div variants={stagger} >
     <section>
       <div class="sm:flex sm:flex-wrap pb-5 ">
         <div class="pb-5 lg:w-8/12">
           <div class="w-full cursor-pointer">
               {posts.map((post) => (
+                <motion.div 
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.99 }}
+                variants={fadeInUp}>
                 <PostPreview
                   key={post.slug}
                   title={post.title}
@@ -19,11 +52,15 @@ export default function MoreStories({ posts }) {
                   slug={post.slug}
                   excerpt={post.excerpt}
                 />
+                </motion.div> 
               ))}
+
             </div>
+
           </div>
         <div class="sm:w-2/4	flex-1 lg:ml-5 rounded-xl">
-        <div class="">
+          <div class="">
+            <motion.div variants={fadeInUp}>
               <div class=" w-full p-5 shadow rounded-t-lg ">
                   <h3 class="text-2xl  leading-6 font-medium text-gray-900">
                     Mes musiques
@@ -37,7 +74,8 @@ export default function MoreStories({ posts }) {
                     Dashboard
                   </h3>
               </div> 
-              <div class="w-full p-5  border border-gray-200 border-t-0">
+            </motion.div>
+              <motion.div variants={fadeInUp} class="w-full p-5  border border-gray-200 border-t-0">
                 <div class="flex flex-wrap justify-between	">
                   <div class="">
                     <h4 class="text-lg leading-6 font-medium text-gray-500">
@@ -47,7 +85,11 @@ export default function MoreStories({ posts }) {
                       0€
                     </h4>
                   </div>
-                  <div class="place-content-end	">
+                  <motion.div 
+                  initial={{ x: 10, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 1 }}
+                  class="place-content-end	">
                   <Image
                     alt="Icon-article-design-blog-3D-2"
                     className="rounded-lg mt-10 "
@@ -57,13 +99,14 @@ export default function MoreStories({ posts }) {
                     quality="100"
                     src={'/static/images/Icon-Argent-Blog-Vente-En-Ligne.png'}
                     />
-                  </div>
+                  </motion.div>
                 </div>
-              </div> 
+              </motion.div> 
             </div>  
         </div>
-      </div>  
+      </div> 
     </section>
+    </motion.div>
   )
 }
 
