@@ -3,6 +3,8 @@ import Container from '../components/container'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { motion } from 'framer-motion';
+import { NextSeo } from 'next-seo';
+
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 
@@ -36,8 +38,17 @@ export default function apropos() {
   return (
 
     <Container>
+          <NextSeo
+            title="A propos de – killian cartignies"
+            canonical="https://leerob.io/about"
+            openGraph={{
+              url: 'https://leerob.io/about',
+              title: 'A propos de – killian cartignies'
+            }}
+          />
           <Header>
             <motion.div 
+              key="3"
               initial='initial' 
               animate='animate' 
               exit={{ opacity: 0 }}

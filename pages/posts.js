@@ -5,12 +5,21 @@ import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
 import Link from 'next/link'
 import Image from 'next/image';
+import { NextSeo } from 'next-seo';
 
 
 export default function Blog({ allPosts }) {
   return (
     <>
       <Layout>
+      <NextSeo
+            title="Tous les posts du blog – killian cartignies"
+            canonical="https://leerob.io/about"
+            openGraph={{
+              url: 'https://leerob.io/about',
+              title: 'Tous les posts du blog – killian cartignies'
+            }}
+          />
 
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
             <div class="flex mt-10">

@@ -94,8 +94,27 @@ html {
     stroke-dashoffset: 361px;
     transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
   }
+  @media screen and (max-width: 640px) {
+    .animation a svg {
+      width: 70px;
+      height: 100px;
+      position: absolute;
+      left: 55%;
+      top: -95%;
+      transform: translate(-50%, 7px) translateZ(0);
+      fill: none;
+      stroke: var(--stroke, var(--line));
+      stroke-linecap: round;
+      stroke-width: 2px;
+      stroke-dasharray: var(--offset, 69px) 278px;
+      stroke-dashoffset: 361px;
+      transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
+    }
+    
+  }
+
+
   .animation a:hover {
-    transform: rotate(45deg);
     --spacing: 4px;
     --stroke: var(--line-active);
     --stroke-delay: 0.1s;

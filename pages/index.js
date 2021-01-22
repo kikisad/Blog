@@ -9,19 +9,19 @@ import Head from 'next/head'
 import { motion } from "framer-motion";
 
 
+
 export default function Index({ allPosts }) {
   const morePosts = allPosts.slice(0)
   return (
     <>
       <motion.div 
+      key="modal"
       initial='initial' 
       animate='animate' 
       exit={{ opacity: 0 }}
       >
       <Layout>
-          <Head>
-            <title>L'entreprenariat étudiant par killian </title>
-          </Head>
+          <Head/>
           <HeroBanner />
           <Container>
             <Header>

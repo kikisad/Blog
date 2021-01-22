@@ -33,13 +33,13 @@ export default function Herobanner() {
   return (
     <motion.div variants={stagger} >
 
-      <div class="flex flex-wrap-reverse sm:flex-nowrap">
-        <motion.div variants={fadeInUp}  class="pl-5 lg:pl-8 w-full sm:w-1/2">
-          <h3 class="text-base font-medium text-gray-600 sm:pt-32 md:pt-10 xl:pt-32	pt-5" >
+      <div class="flex flex-wrap-reverse md:flex-nowrap">
+        <motion.div variants={fadeInUp}  class="pl-5 lg:pl-8 w-full md:w-1/2">
+          <h3 class="text-base font-medium text-gray-600 sm:pt-20 md:pt-18 xl:pt-32	pt-5" >
             Hi, je suis killian 🖐 ! 
             </h3>
           <br/>
-          <h1 class="text-3xl sm:text-4xl md:text-xl lg:text-4xl  font-black text-gray-600 pr-5 sm:pr-10 ">
+          <h1 class="text-3xl sm:text-4xl md:text-xl lg:text-4xl font-black text-gray-600 pr-5 sm:pr-10">
             Étudiant Entrepreneur, j'aime 
             raconter mes aventures et
             expériance sur la réalisation
@@ -63,9 +63,9 @@ export default function Herobanner() {
                   transition={{ 
                     duration: 0.3,
                     ease: easing,
-                  }} 
-                  class="mt-5 sm:mt-0 md:mt-5 lg:mt-5 md:hidden xl:block xl:mt-0 "
+                  }}
             >
+              <div class="mt-0 sm:mt-0  lg:mt-5  xl:mt-0 ">
               <button
                   aria-label="Lien vers mes articles"
                   type="button"
@@ -73,6 +73,7 @@ export default function Herobanner() {
                 >        
                 Jette un œil à mes articles
               </button>
+              </div>
             </motion.div>
             <motion.div 
                   whileHover={{ scale: 1.05 }}
@@ -83,15 +84,15 @@ export default function Herobanner() {
                     duration: 0.3,
                     ease: easing,
                   }} 
-                  class="mt-5 sm:mt-0 md:mt-5 lg:mt-5 md:hidden xl:block xl:mt-0 "
+                  class="mt-5 sm:mt-0 md:mt-5 lg:mt-5  xl:mt-0 "
             >
               
               <button
                   aria-label="Lien vers le podcast"
                   type="button"
-                  className="border border-gray-600	 text-gray-600 sm:text-xs font-black rounded p-5 sm:ml-8 md:ml-0 "
+                  className="border border-gray-600 text-gray-600 font-black rounded p-4 sm:ml-8 md:ml-0 "
                 >
-                  <div class="flex items-center gradient-btn ">
+                  <div class="flex items-center">
                     <div class="flex-initial pr-3">
                     <svg width="18" height="18" alt="Fleche-redirection" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12H21M21 12L14 5M21 12L14 19" stroke="#4B5563" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg>

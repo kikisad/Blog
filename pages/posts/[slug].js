@@ -57,6 +57,7 @@ export default function Post({ post, morePosts, preview }) {
   }
   return (
     <motion.div 
+    key="6"
     initial='initial' 
     animate='animate' 
     exit={{ opacity: 0 }}
@@ -70,20 +71,26 @@ export default function Post({ post, morePosts, preview }) {
           <>
             <article className="mx-auto w-full sm:w-9/12 ">
               <Head>
+
+              <title>{post.title} | L'entrepreneuriat étudiant </title>
+              <meta name="description" content={post.excerpt} />
+              <meta name="title" content={post.title} />
+
+              <meta property="og:title" content="{post.title}" />
+              <meta property="og:url" content="https://blog.tailwindcss.com" />
+              <meta property="og:type" content="article" />
+              <meta property="og:description" content={post.excerpt} />
+              <meta property="og:image" content={post.coverImage} />
+
               <meta name="twitter:card" content="summary_large_image" />
               <meta name="twitter:site" content="@kikisad_" />
               <meta name="twitter:creator" content="@kikisad_" />
               <meta name="twitter:title" content={post.title} />
               <meta name="twitter:description" content={post.excerpt} />
               <meta name="twitter:image" content={post.coverImage} />
-              <meta property="og:url" content="https://blog.tailwindcss.com" />
-              <meta property="og:type" content="article" />
-              <meta property="og:description" content={post.excerpt} />
-              <meta property="og:image" content={post.coverImage} />
-              <title>{post.title} | L'entreprenariat étudiant</title>
-              <meta name="description" content={post.excerpt} />
+
               </Head>
-              <motion.div variants={fadeInUp} >
+              <motion.div  key="5" variants={fadeInUp} >
               <PostHeader
                 title={post.title}
                 coverImage={post.coverImage}
@@ -91,6 +98,7 @@ export default function Post({ post, morePosts, preview }) {
               />
               </motion.div>
               <motion.div 
+              key="2"
               initial={{ x: -30, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ 
