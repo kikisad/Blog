@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.3.1",
@@ -12,10 +13,12 @@
     "date-fns": "2.16.1",
     "framer": "^1.2.14",
     "framer-motion": "^3.2.1",
+    "googleapis": "^67.0.0",
     "gray-matter": "4.0.2",
     "isomorphic-unfetch": "^3.1.0",
     "next": "latest",
     "next-seo": "^4.17.0",
+    "next-sitemap": "^1.4.5",
     "nextjs-breadcrumbs": "^0.9.9",
     "querystring": "^0.2.0",
     "react": "^17.0.1",
